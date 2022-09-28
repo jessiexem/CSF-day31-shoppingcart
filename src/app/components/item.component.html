@@ -1,0 +1,31 @@
+<h2>Item</h2>
+
+<form [formGroup]="itemForm" (ngSubmit)="addToCart()">
+    <table>
+        <tr>
+            <td>Name:</td>
+            <td><input type="text" size="30" formControlName="name"></td>
+        </tr>
+        <tr>
+            <td>Unit Price:</td>
+            <td><input type="number" size="30" step="0.01" formControlName="unitPrice"></td>
+        </tr>
+        <tr>
+            <td>Quantity:</td>
+            <td>
+                <select formControlName="quantity">
+                    <option *ngFor="let number of itemQuantity" value="{{number}}">
+                        {{ number }}
+                    </option>
+                    <!-- <option value="1">1</option> -->
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <button type="submit">Add</button>
+            </td>
+        </tr>
+    </table>
+</form>
